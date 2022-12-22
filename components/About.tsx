@@ -68,13 +68,7 @@ function About({ pageInfo }: AboutProps) {
         </motion.p>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        viewport={{ once: true }}
-        className="absolute top-[40%] right-4 w-full h-[300px] rounded-2xl bg-red-500/20 blur-3xl -z-10 skew-y-12"
-      />
+      <div className="absolute top-[40%] right-4 w-full h-[300px] rounded-2xl bg-red-500/20 blur-3xl -z-10 skew-y-12" />
     </div>
   );
 }
