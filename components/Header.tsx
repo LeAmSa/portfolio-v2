@@ -8,7 +8,7 @@ interface HeaderProps {
 
 function Header({ socials }: HeaderProps) {
   return (
-    <header className="sticky backdrop-blur-lg top-0 p-5 flex items-start justify-center md:justify-between w-full px-20 z-20">
+    <header className="sticky backdrop-blur-lg top-0 py-1 md:py-5 flex items-start justify-center md:justify-between w-full px-20 z-20">
       <motion.div
         initial={{
           x: -500,

@@ -27,7 +27,7 @@ function Projects({ projects }: ProjectsProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2.0 }}
-      className="h-screen px-4 md:px-36 relative flex flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
+      className="h-screen px-4 md:px-24 relative flex flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
     >
       <SectionTitle>Projetos</SectionTitle>
 
@@ -37,20 +37,22 @@ function Projects({ projects }: ProjectsProps) {
         mais antigo
       </h3>
 
-      <div className="mt-20 relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-track-rounded-lg scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scrollbar-thumb-rounded-lg">
+      <div className="mt-24 relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-track-rounded-lg scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scrollbar-thumb-rounded-lg">
         {projects?.map((project, i) => (
           <div
             key={project?._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center px-4 pb-6 md:p-14"
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center px-4 pb-4 md:pb-6 md:p-10"
           >
             <Image
               src={urlFor(project?.image).url()}
               alt="Imagem Mockup"
               width={800}
               height={382}
-              className="max-w-[300px] h-auto object-cover"
+              placeholder="blur"
+              blurDataURL="URL"
+              className="max-w-[150px] md:max-w-[250px] h-auto object-cover"
             />
-            <div className="space-y-8 px-0 md:px-10 max-w-6xl">
+            <div className="space-y-5 px-0 md:px-10 max-w-6xl">
               <div className="flex flex-col gap-2 items-center justify-center">
                 <h4 className="text-2xl md:text-3xl font-semibold text-center">
                   <span className="underline decoration-red-500/70 bg-clip-text text-transparent bg-gradient-to-r from-white to-red-300">
@@ -77,7 +79,7 @@ function Projects({ projects }: ProjectsProps) {
                 {project?.summary}
               </p>
 
-              <div className="flex justify-center items-center gap-24">
+              <div className="flex justify-center items-center gap-20 md:gap-24">
                 {project.linkToBuild && (
                   <Link
                     href={project?.linkToBuild}

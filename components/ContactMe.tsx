@@ -70,7 +70,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
     >
       <SectionTitle>Contato</SectionTitle>
 
-      <div className="mt-32 flex flex-col space-y-5">
+      <div className="mt-24 md:mt-32 flex flex-col space-y-5">
         <h4 className="text-lg md:text-xl font-semibold text-center">
           Eu tenho o que você precisa.{" "}
           <span className="underline decoration-red-500/80">
@@ -81,17 +81,17 @@ function ContactMe({ pageInfo }: ContactMeProps) {
         <div className="space-y-1 md:space-y-3">
           <div className="flex items-center justify-center space-x-2">
             <PhoneIcon className="text-red-500 h-4 w-4 animate-pulse" />
-            <p className="text-md">(14) 982254920</p>
+            <p className="text-sm md:text-base">{pageInfo.phoneNumber}</p>
           </div>
 
           <div className="flex items-center justify-center space-x-2">
             <EnvelopeIcon className="text-red-500 h-4 w-4 animate-pulse" />
-            <p className="text-md">leandro.salles@outlook.com</p>
+            <p className="text-sm md:text-base">{pageInfo.email}</p>
           </div>
 
           <div className="flex items-center justify-center space-x-2">
             <MapPinIcon className="text-red-500 h-4 w-4 animate-pulse" />
-            <p className="text-md">Bauru - SP</p>
+            <p className="text-sm md:text-base">{pageInfo.address}</p>
           </div>
         </div>
 

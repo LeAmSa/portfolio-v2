@@ -27,7 +27,7 @@ function About({ pageInfo }: AboutProps) {
         viewport={{ once: true }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt="Imagem de frente"
-        className="mt-20 mb-5 md:mb-0 flex-shrink-0 w-40 h-40 rounded-full object-cover md:rounded-lg md:w-64 xl:w-80 xl:h-80"
+        className="mt-20 mb-5 md:mb-0 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-lg md:w-64 xl:w-80 xl:h-80"
       />
 
       <div className="md:mt-20 space-y-5 md:space-y-10 px-0 md:px-10">
@@ -44,7 +44,7 @@ function About({ pageInfo }: AboutProps) {
             duration: 1,
           }}
           viewport={{ once: true }}
-          className="text-2xl md:text-4xl font-semibold"
+          className="text-xl md:text-4xl font-semibold"
         >
           Um <span className="underline decoration-red-600">pequeno</span>{" "}
           background
@@ -62,7 +62,7 @@ function About({ pageInfo }: AboutProps) {
             duration: 1,
           }}
           viewport={{ once: true }}
-          className="text-sm md:text-lg"
+          className="text-sm md:text-lg overflow-y-scroll max-h-[200px] pr-4 scrollbar-thin scrollbar-track-gray-900/50 scrollbar-track-rounded-lg scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scrollbar-thumb-rounded-lg"
         >
           {pageInfo?.backgroundInformation}
         </motion.p>

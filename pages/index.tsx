@@ -33,7 +33,7 @@ type Props = {
 const Home = ({ pageInfo, skills, projects, socials }: Props) => {
   return (
     <div
-      className={`bg-[#242424] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin  scrollbar-track-gray-400/20 scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scroll-smooth ${jost.variable} font-sans`}
+      className={`bg-[#242424] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin  scrollbar-track-[#242424]/60 scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scroll-smooth ${jost.variable} font-sans`}
     >
       <Head>
         <title>LeAmSa | Portfolio</title>
