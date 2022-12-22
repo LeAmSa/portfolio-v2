@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { motion } from "framer-motion";
 
 import Image from "next/image";
@@ -24,8 +22,6 @@ interface ProjectsProps {
 }
 
 function Projects({ projects }: ProjectsProps) {
-  // const projects = [1, 2, 3, 4, 5];
-
   return (
     <motion.div
       initial={{ opacity: 0 }}

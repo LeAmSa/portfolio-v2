@@ -1,6 +1,5 @@
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Social } from "../typings";
 
 interface HeaderProps {
@@ -52,7 +51,6 @@ function Header({ socials }: HeaderProps) {
         }}
         className="text-gray-300 cursor-pointer"
       >
-        {/* <Link href="#contact" className="flex items-center"> */}
         <SocialIcon
           className="cursor-pointer"
           network="email"
@@ -61,7 +59,6 @@ function Header({ socials }: HeaderProps) {
         />
 
         <p className="uppercase hidden md:inline-flex">Entre em contato</p>
-        {/* </Link> */}
       </motion.div>
     </header>
   );
