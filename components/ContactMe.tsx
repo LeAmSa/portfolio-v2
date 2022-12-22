@@ -31,7 +31,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+  const onSubmit: SubmitHandler<Inputs> = async (formData) => {
     // window.location.href = `mailto:leandro.salles@outlook.com?subject=${formData.subject}&body=Olá, meu nome é ${formData.name}. ${formData.message}`;
 
     const templateParams = {
@@ -40,25 +40,20 @@ function ContactMe({ pageInfo }: ContactMeProps) {
       message: formData.message,
     };
 
-    emailjs
-      .send(
-        process.env.NEXT_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_EMAILJS_TEMPLATE_ID!,
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         templateParams,
-        process.env.NEXT_EMAILJS_PUBLIC_KEY!
-      )
-      .then(
-        function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-          setIsEmailAlertOpen(true);
-          setAlertStatusMessage("success");
-        },
-        function (error) {
-          console.log("FAILED...", error);
-          setIsEmailAlertOpen(true);
-          setAlertStatusMessage("fail");
-        }
+        process.env.NEXT_PUBLIC_EMAILJS_KEY!
       );
+      setIsEmailAlertOpen(true);
+      setAlertStatusMessage("success");
+    } catch (error) {
+      console.log(error);
+      setIsEmailAlertOpen(true);
+      setAlertStatusMessage("fail");
+    }
   };
 
   return (
