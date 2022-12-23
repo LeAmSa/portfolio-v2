@@ -1,6 +1,7 @@
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import { Social } from "../typings";
+import Link from "next/link";
 
 interface HeaderProps {
   socials: Social[];
@@ -35,31 +36,33 @@ function Header({ socials }: HeaderProps) {
         ))}
       </motion.div>
 
-      <motion.div
-        initial={{
-          x: 500,
-          opacity: 0,
-          scale: 0.5,
-        }}
-        animate={{
-          x: 0,
-          opacity: 1,
-          scale: 1,
-        }}
-        transition={{
-          duration: 1.0,
-        }}
-        className="text-gray-300 cursor-pointer"
-      >
-        <SocialIcon
-          className="cursor-pointer"
-          network="email"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+      <Link href="#contact" legacyBehavior>
+        <motion.div
+          initial={{
+            x: 500,
+            opacity: 0,
+            scale: 0.5,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 1.0,
+          }}
+          className="text-gray-300 cursor-pointer"
+        >
+          <SocialIcon
+            className="cursor-pointer"
+            network="email"
+            fgColor="gray"
+            bgColor="transparent"
+          />
 
-        <p className="uppercase hidden md:inline-flex">Entre em contato</p>
-      </motion.div>
+          <p className="uppercase hidden md:inline-flex">Entre em contato</p>
+        </motion.div>
+      </Link>
     </header>
   );
 }
