@@ -17,7 +17,6 @@ interface ContactMeProps {
 type Inputs = {
   name: string;
   email: string;
-  subject: string;
   message: string;
 };
 
@@ -38,6 +37,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
       from_name: formData.name,
       email: formData.email,
       message: formData.message,
+      reply_to: formData.email,
     };
 
     try {
@@ -109,7 +109,14 @@ function ContactMe({ pageInfo }: ContactMeProps) {
             </p>
           )}
           <input
-            {...register("email", { required: "Preencha seu email" })}
+            {...register("email", {
+              required: "Preencha seu email",
+              pattern: {
+                value:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                message: "Digite um email válido",
+              },
+            })}
             placeholder="Email"
             className={`contactInput ${
               errors.email && `border-2 border-red-700`
