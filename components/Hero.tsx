@@ -45,11 +45,15 @@ function Hero({ pageInfo }: HeroProps) {
       />
 
       <div className="z-10">
-        <h2 className="text-sm text-gray-500 uppercase tracking-[15px]">
+        <h1 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-t from-gray-500/60">
+          {pageInfo?.name}
+        </h1>
+
+        <h2 className="text-xs md:text-sm text-gray-600 uppercase tracking-[15px]">
           {pageInfo?.role}
         </h2>
 
-        <h1 className="text-3xl md:text-6xl font-semibold px-5 md:px-10">
+        <h1 className="pt-3 text-2xl md:text-5xl font-semibold px-5 md:px-10">
           <span className="mr-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-red-400">
             &lt;Dev {text}
           </span>
