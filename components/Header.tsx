@@ -32,6 +32,7 @@ function Header({ socials }: HeaderProps) {
             url={social.url}
             fgColor="gray"
             bgColor="transparent"
+            className="hover:scale-90 transition-transform"
           />
         ))}
       </motion.div>
