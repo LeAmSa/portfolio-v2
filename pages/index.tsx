@@ -21,6 +21,7 @@ import { Jost } from "@next/font/google";
 const jost = Jost({
   subsets: ["latin"],
   variable: "--font-jost",
+  display: "swap",
 });
 
 type Props = {
@@ -85,5 +86,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
 
     revalidate: 60 * 60,
+    // revalidate: 10,
   };
 };
