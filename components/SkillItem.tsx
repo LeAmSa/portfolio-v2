@@ -3,13 +3,29 @@ import Image from "next/image";
 import { Skill } from "../typings";
 import { urlFor } from "../sanity";
 
+import { motion } from "framer-motion";
+
 interface SkillItemProps {
   skill: Skill;
 }
 
 function Skill({ skill }: SkillItemProps) {
   return (
-    <div title={skill.title} className="group relative flex cursor-pointer">
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: [0, 0.5, 0.8, 1],
+        scale: [0.3, 0.6, 1.1, 1 - 5 / skill?.progress],
+      }}
+      transition={{
+        duration: 1.0 + skill?.progress / 100,
+      }}
+      viewport={{ once: true }}
+      title={skill?.title}
+      className="group relative flex cursor-pointer"
+    >
       <div className="flex justify-center items-center w-16 h-16 md:w-20 md:h-20 rounded-full border border-gray-500">
         <Image
           src={urlFor(skill?.image).url()}
@@ -27,7 +43,7 @@ function Skill({ skill }: SkillItemProps) {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

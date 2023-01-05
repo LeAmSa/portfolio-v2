@@ -25,8 +25,9 @@ function Projects({ projects }: ProjectsProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 2.0 }}
+      viewport={{ once: true }}
       className="h-screen px-4 md:px-24 relative flex flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
     >
       <SectionTitle>Projetos</SectionTitle>
