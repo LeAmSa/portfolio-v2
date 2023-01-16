@@ -57,23 +57,30 @@ function ContactMe({ pageInfo }: ContactMeProps) {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
-      className="h-screen relative flex flex-col items-center text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto z-0"
-    >
-      <SectionTitle>Contato</SectionTitle>
+    <div className="h-screen relative flex flex-col items-center text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto z-0">
+      <SectionTitle title="Contato" />
 
       <div className="mt-24 md:mt-32 flex flex-col space-y-5">
-        <h4 className="text-lg md:text-xl font-semibold text-center">
+        <motion.h4
+          initial={{ y: -50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-lg md:text-xl font-semibold text-center"
+        >
           Eu tenho o que você precisa.{" "}
           <span className="underline decoration-red-500/80">
             Vamos conversar.
           </span>
-        </h4>
+        </motion.h4>
 
-        <div className="space-y-1 md:space-y-3">
+        <motion.div
+          initial={{ y: -50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="space-y-1 md:space-y-3"
+        >
           <div className="flex items-center justify-center space-x-2">
             <PhoneIcon className="text-red-500 h-4 w-4 animate-pulse" />
             <p className="text-sm md:text-base">{pageInfo.phoneNumber}</p>
@@ -88,9 +95,13 @@ function ContactMe({ pageInfo }: ContactMeProps) {
             <MapPinIcon className="text-red-500 h-4 w-4 animate-pulse" />
             <p className="text-sm md:text-base">{pageInfo.address}</p>
           </div>
-        </div>
+        </motion.div>
 
-        <form
+        <motion.form
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true }}
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 max-w-xs md:max-w-none md:w-96 mx-auto"
         >
@@ -156,17 +167,23 @@ function ContactMe({ pageInfo }: ContactMeProps) {
           >
             {isSubmitting ? <Spinner /> : <span>Enviar</span>}
           </button>
-        </form>
+        </motion.form>
       </div>
 
-      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 md:right-0 w-[450px] h-[450px] rounded-3xl bg-red-500/10 blur-3xl -z-10" />
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+        className="absolute top-[40%] left-1/2 -translate-x-1/2 md:right-0 w-[450px] h-[450px] rounded-3xl bg-red-500/10 blur-3xl -z-10"
+      />
 
       <Alert
         isOpen={isEmailAlertOpen}
         status={alertStatusMessage}
         setIsOpen={setIsEmailAlertOpen}
       />
-    </motion.div>
+    </div>
   );
 }
 

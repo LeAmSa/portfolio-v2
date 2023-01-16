@@ -30,13 +30,19 @@ function Projects({ projects }: ProjectsProps) {
       viewport={{ once: true }}
       className="h-screen px-4 md:px-24 relative flex flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
     >
-      <SectionTitle>Projetos</SectionTitle>
+      <SectionTitle title="Projetos" />
 
-      <h3 className="hidden md:block absolute top-36 uppercase tracking-[3px] text-gray-500 text-xs md:text-sm">
+      <motion.h3
+        initial={{ y: -50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="hidden md:block absolute top-36 uppercase tracking-[3px] text-gray-500 text-xs md:text-sm"
+      >
         Ordenados do mais{" "}
         <span className="underline decoration-red-500/70">recente</span> para o
         mais antigo
-      </h3>
+      </motion.h3>
 
       <div className="mt-24 relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-track-rounded-lg scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scrollbar-thumb-rounded-lg">
         {projects?.map((project, i) => (

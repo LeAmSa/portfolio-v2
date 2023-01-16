@@ -1,14 +1,21 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 interface SectionTitleProps {
-  children: React.ReactNode;
+  title: string;
 }
 
-function SectionTitle({ children }: SectionTitleProps) {
+function SectionTitle({ title }: SectionTitleProps) {
   return (
-    <h3 className="absolute top-16 md:top-24 uppercase tracking-[20px] translate-x-[10px] text-gray-500 text-xl md:text-2xl">
-      {children}
-    </h3>
+    <motion.h3
+      initial={{ y: -50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="absolute top-16 md:top-24 uppercase tracking-[20px] translate-x-[10px] text-gray-500 text-xl md:text-2xl"
+    >
+      {title}
+    </motion.h3>
   );
 }
 

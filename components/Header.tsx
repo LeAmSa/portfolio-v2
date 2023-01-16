@@ -1,69 +1,70 @@
-import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { Social } from "../typings";
 import Link from "next/link";
+import {
+  HomeIcon,
+  UserCircleIcon,
+  BoltIcon,
+  RectangleStackIcon,
+  EnvelopeIcon,
+} from "@heroicons/react/24/solid";
+import ToolTip from "./ToolTip";
 
-interface HeaderProps {
-  socials: Social[];
-}
-
-function Header({ socials }: HeaderProps) {
+function Header() {
   return (
-    <header className="sticky backdrop-blur-lg top-0 py-1 md:py-5 flex items-start justify-center md:justify-between w-full px-20 z-20">
+    <header className="sticky backdrop-blur-lg top-0 py-2 md:py-6 flex items-center justify-center md:justify-between w-full px-20 z-20">
       <motion.div
         initial={{
-          x: -500,
+          y: -50,
           opacity: 0,
-          scale: 0.5,
         }}
         animate={{
-          x: 0,
+          y: 0,
           opacity: 1,
-          scale: 1,
         }}
         transition={{
-          duration: 1.5,
+          duration: 1.0,
         }}
         className="flex flex-row items-center"
       >
-        {socials?.map((social) => (
-          <SocialIcon
-            key={social._id}
-            url={social.url}
-            fgColor="gray"
-            bgColor="transparent"
-            className="hover:scale-90 transition-transform"
-          />
-        ))}
+        <Link href="#hero">
+          <HomeIcon className="w-6 h-6 mr-6 md:hidden hover:text-slate-400 transition-colors" />
+          <span className="hidden md:block font-semibold text-slate-200 text-xl uppercase tracking-widest">
+            leamsa
+          </span>
+        </Link>
       </motion.div>
 
-      <Link href="#contact" legacyBehavior>
-        <motion.div
-          initial={{
-            x: 500,
-            opacity: 0,
-            scale: 0.5,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{
-            duration: 1.0,
-          }}
-          className="text-gray-300 cursor-pointer"
-        >
-          <SocialIcon
-            className="cursor-pointer"
-            network="email"
-            fgColor="gray"
-            bgColor="transparent"
-          />
-
-          <p className="uppercase hidden md:inline-flex">Entre em contato</p>
-        </motion.div>
-      </Link>
+      <motion.div
+        initial={{
+          y: -50,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1.0,
+        }}
+        className="flex items-center gap-6"
+      >
+        <Link href="#about" className="relative group">
+          <UserCircleIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
+          <ToolTip title="Sobre" />
+        </Link>
+        <Link href="#skills" className="relative group">
+          <BoltIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
+          <ToolTip title="Skills" />
+        </Link>
+        <Link href="#projects" className="relative group">
+          <RectangleStackIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
+          <ToolTip title="Projetos" />
+        </Link>
+        <Link href="#contact" className="relative group">
+          <EnvelopeIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
+          <ToolTip title="Contato" />
+        </Link>
+      </motion.div>
     </header>
   );
 }

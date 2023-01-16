@@ -1,22 +1,26 @@
 import type { GetStaticProps } from "next";
 import Head from "next/head";
+import { Jost } from "@next/font/google";
 
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
-import ContactMe from "../components/ContactMe";
-import Footer from "../components/Footer";
+import {
+  Header,
+  Hero,
+  About,
+  Skills,
+  Projects,
+  ContactMe,
+} from "../components";
 
-import { fetchPageInfo } from "../utils/fetchPageInfo";
-import { fetchSocials } from "../utils/fetchSocials";
-import { fetchSkills } from "../utils/fetchSkills";
-import { fetchProjects } from "../utils/fetchProjects";
+import {
+  fetchPageInfo,
+  fetchSocials,
+  fetchSkills,
+  fetchProjects,
+} from "../utils";
 
 import { PageInfo, Project, Social, Skill } from "../typings";
 
-import { Jost } from "@next/font/google";
+import { motion } from "framer-motion";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -34,16 +38,16 @@ type Props = {
 const Home = ({ pageInfo, skills, projects, socials }: Props) => {
   return (
     <div
-      className={`bg-[#242424] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin  scrollbar-track-[#242424]/60 scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scroll-smooth ${jost.variable} font-sans`}
+      className={`relative bg-[#1D2429] text-slate-200 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-[#242424]/60 scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scroll-smooth ${jost.variable} font-sans`}
     >
       <Head>
         <title>LeAmSa | Portfolio</title>
       </Head>
 
-      <Header socials={socials} />
+      <Header />
 
       <section id="hero" className="snap-center">
-        <Hero pageInfo={pageInfo} />
+        <Hero pageInfo={pageInfo} socials={socials} />
       </section>
 
       <section id="about" className="snap-center">
@@ -62,9 +66,12 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
         <ContactMe pageInfo={pageInfo} />
       </section>
 
-      <footer className="sticky w-10 h-10 bottom-3 left-full hidden md:block -translate-x-6">
-        <Footer />
-      </footer>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.3 }}
+        transition={{ duration: 1.5 }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[70%] bg-hero rounded-lg blur-[100px] opacity-30 skew-y-[20deg] z-10"
+      />
     </div>
   );
 };

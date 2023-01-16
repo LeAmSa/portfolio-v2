@@ -14,8 +14,8 @@ function About({ pageInfo }: AboutProps) {
   const years = Math.abs(ageDate.getUTCFullYear() - 1970);
 
   return (
-    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-5 md:px-10 justify-center mx-auto items-center z-0">
-      <SectionTitle>Sobre</SectionTitle>
+    <div className="h-screen flex relative flex-col text-center lg:text-left lg:flex-row max-w-7xl px-5 lg:px-10 justify-center mx-auto items-center z-0">
+      <SectionTitle title="Sobre" />
 
       <motion.img
         initial={{
@@ -32,7 +32,7 @@ function About({ pageInfo }: AboutProps) {
         viewport={{ once: true }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt="Imagem de frente"
-        className="mt-20 mb-5 md:mb-0 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-lg md:w-64 xl:w-80 xl:h-80"
+        className="mt-20 mb-5 md:mb-0 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 xl:w-80 xl:h-80"
       />
 
       <div className="md:mt-20 space-y-5 md:space-y-10 px-0 md:px-10">
@@ -71,7 +71,7 @@ function About({ pageInfo }: AboutProps) {
         >
           Olá, seja muito bem vindo (a) ao meu site! Me chamo Leandro, tenho{" "}
           {years} anos e sou bacharel em{" "}
-          <span className="underline decoration-red-600">
+          <span className="underline decoration-red-600 font-semibold">
             Ciência da Computação
           </span>{" "}
           pela Universidade Tecnológica Federal do Paraná [2015-2020].
@@ -85,7 +85,9 @@ function About({ pageInfo }: AboutProps) {
           </span>
           . <br /> <br /> Minha paixão por design surgiu antes mesmo da
           graduação. Em 2014, trabalhei por um período como{" "}
-          <span className="underline decoration-red-600">designer gráfico</span>{" "}
+          <span className="underline decoration-red-600 font-semibold">
+            designer gráfico
+          </span>{" "}
           de anúncios de diversos produtos e era extremamente gratificante
           quando conseguia desenvolver algo que agradasse aos olhos das outras
           pessoas. Hoje, essa paixão é acentuada quando vejo sites ou
@@ -102,7 +104,10 @@ function About({ pageInfo }: AboutProps) {
           aprender coisas novas por conta própria, afinal, a maior virtude de um
           cientista é sua capacidade de pesquisa. Fique a vontade para conhecer
           um pouco mais das minhas capacidades explorando as seções abaixo e
-          entre em contato se quiser me conhecer ainda melhor. Obrigado!
+          entre em contato se quiser me conhecer ainda melhor.{" "}
+          <span className="font-semibold underline decoration-red-600">
+            Obrigado!
+          </span>
         </motion.p>
       </div>
 
