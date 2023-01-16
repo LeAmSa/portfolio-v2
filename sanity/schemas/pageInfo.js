@@ -1,3 +1,9 @@
+import React from "react";
+
+const UnderlineDecorator = (props) => (
+  <span style={{ textDecorationColor: "#dc2626" }}>{props.children}</span>
+);
+
 export default {
   name: "pageInfo",
   title: "PageInfo",
@@ -24,7 +30,23 @@ export default {
     {
       name: "backgroundInformation",
       title: "BackgroundInformation",
-      type: "string",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          marks: {
+            decorators: [
+              { title: "Strong", value: "strong" },
+              { title: "Emphasis", value: "em" },
+              { title: "Code", value: "code" },
+              {
+                title: "Underline",
+                value: "underline",
+              },
+            ],
+          },
+        },
+      ],
     },
     {
       name: "profilePic",
