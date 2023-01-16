@@ -61,3 +61,11 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
+
+.bg-hero {
+  background: linear-gradient(
+    145deg,
+    rgba(220, 38, 38, 1) 15%,
+    rgba(255, 243, 243, 0.5) 96%
+  );
+}
