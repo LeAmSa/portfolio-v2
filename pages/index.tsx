@@ -69,7 +69,6 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
-        transition={{ duration: 1.5 }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[70%] bg-hero rounded-lg blur-[100px] opacity-30 skew-y-[20deg] z-10"
       />
     </div>
@@ -93,6 +92,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
 
     revalidate: 60 * 60,
-    // revalidate: 10,
   };
 };

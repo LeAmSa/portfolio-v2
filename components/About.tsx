@@ -19,7 +19,7 @@ function About({ pageInfo }: AboutProps) {
 
       <motion.img
         initial={{
-          x: -150,
+          x: -70,
           opacity: 0,
         }}
         transition={{
@@ -32,13 +32,13 @@ function About({ pageInfo }: AboutProps) {
         viewport={{ once: true }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt="Imagem de frente"
-        className="mt-20 mb-5 md:mb-0 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 xl:w-80 xl:h-80"
+        className="mt-20 mb-5 md:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 xl:w-80 xl:h-80"
       />
 
       <div className="md:mt-20 space-y-5 md:space-y-10 px-0 md:px-10">
         <motion.h4
           initial={{
-            y: -120,
+            y: -50,
             opacity: 0,
           }}
           whileInView={{
@@ -56,7 +56,7 @@ function About({ pageInfo }: AboutProps) {
         </motion.h4>
         <motion.p
           initial={{
-            y: 120,
+            y: 50,
             opacity: 0,
           }}
           whileInView={{

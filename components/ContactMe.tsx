@@ -31,8 +31,6 @@ function ContactMe({ pageInfo }: ContactMeProps) {
     formState: { errors, isSubmitting },
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = async (formData) => {
-    // window.location.href = `mailto:leandro.salles@outlook.com?subject=${formData.subject}&body=Olá, meu nome é ${formData.name}. ${formData.message}`;
-
     const templateParams = {
       from_name: formData.name,
       email: formData.email,
@@ -64,7 +62,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
         <motion.h4
           initial={{ y: -50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ delay: 0.8 }}
           viewport={{ once: true }}
           className="text-lg md:text-xl font-semibold text-center"
         >
@@ -77,7 +75,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
         <motion.div
           initial={{ y: -50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ delay: 1 }}
           viewport={{ once: true }}
           className="space-y-1 md:space-y-3"
         >
@@ -100,12 +98,11 @@ function ContactMe({ pageInfo }: ContactMeProps) {
         <motion.form
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
+          transition={{ delay: 1.5 }}
           viewport={{ once: true }}
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 max-w-xs md:max-w-none md:w-96 mx-auto"
         >
-          {/* <div className="flex space-x-2 md:space-y-0 md:space-x-2"> */}
           <input
             {...register("name", { required: "Preencha seu nome" })}
             placeholder="Nome"
@@ -139,14 +136,6 @@ function ContactMe({ pageInfo }: ContactMeProps) {
               {errors.email.message}
             </p>
           )}
-          {/* </div> */}
-
-          {/* <input
-            {...register("subject")}
-            placeholder="Assunto"
-            className="contactInput"
-            type="text"
-          /> */}
 
           <textarea
             {...register("message", { required: "Digite uma mensagem" })}
@@ -173,7 +162,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{ delay: 1.5 }}
         viewport={{ once: true }}
         className="absolute top-[40%] left-1/2 -translate-x-1/2 md:right-0 w-[450px] h-[450px] rounded-3xl bg-red-500/10 blur-3xl -z-10"
       />
