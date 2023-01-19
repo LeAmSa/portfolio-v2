@@ -51,8 +51,10 @@ function About({ pageInfo }: AboutProps) {
           viewport={{ once: true }}
           className="text-xl md:text-4xl font-semibold"
         >
-          Um <span className="underline decoration-red-600">pequeno</span>{" "}
-          background
+          Um pequeno{" "}
+          <strong className="underline decoration-red-600 bg-clip-text text-transparent bg-gradient-to-r from-slate-200 to-red-300">
+            background
+          </strong>
         </motion.h4>
         <motion.p
           initial={{
@@ -71,23 +73,23 @@ function About({ pageInfo }: AboutProps) {
         >
           Olá, seja muito bem vindo (a) ao meu site! Me chamo Leandro, tenho{" "}
           {years} anos e sou bacharel em{" "}
-          <span className="underline decoration-red-600 font-semibold">
+          <strong className="underline decoration-red-600 font-semibold">
             Ciência da Computação
-          </span>{" "}
+          </strong>{" "}
           pela Universidade Tecnológica Federal do Paraná [2015-2020].
           Apaixonado por tecnologia, design e pelo poder que o visual pode gerar
           por meio de produtos e serviços, venho me dedicando aos estudos da
           area Front-end de desenvolvimento e criei este site pessoal como forma
           de apresentar tudo aquilo em que venho trabalhando para conseguir
           minha{" "}
-          <span className="font-semibold underline decoration-red-600">
+          <strong className="font-semibold underline decoration-red-600">
             primeira oportunidade
-          </span>
+          </strong>
           . <br /> <br /> Minha paixão por design surgiu antes mesmo da
           graduação. Em 2014, trabalhei por um período como{" "}
-          <span className="underline decoration-red-600 font-semibold">
+          <strong className="underline decoration-red-600 font-semibold">
             designer gráfico
-          </span>{" "}
+          </strong>{" "}
           de anúncios de diversos produtos e era extremamente gratificante
           quando conseguia desenvolver algo que agradasse aos olhos das outras
           pessoas. Hoje, essa paixão é acentuada quando vejo sites ou
@@ -95,9 +97,9 @@ function About({ pageInfo }: AboutProps) {
           conquistar as pessoas pelo visual. Com isso, ser capaz de
           desenvolvê-los é o que me inspira. <br /> <br /> Venho me dedicando ao
           estudo do ambiente de desenvolvimento web com{" "}
-          <span className="underline decoration-red-600 font-semibold">
+          <strong className="underline decoration-red-600 font-semibold">
             HTML, CSS, JavaScript e React
-          </span>{" "}
+          </strong>{" "}
           como framework para agregar essas tecnologias. Me considero um
           desenvolvedor ágil, que busca sempre entregar além do esperado e
           principalmente "self-learning", pois tenho uma enorme capacidade de
@@ -105,9 +107,9 @@ function About({ pageInfo }: AboutProps) {
           cientista é sua capacidade de pesquisa. Fique a vontade para conhecer
           um pouco mais das minhas capacidades explorando as seções abaixo e
           entre em contato se quiser me conhecer ainda melhor.{" "}
-          <span className="font-semibold underline decoration-red-600">
+          <strong className="font-semibold underline decoration-red-600">
             Obrigado!
-          </span>
+          </strong>
         </motion.p>
       </div>
 
