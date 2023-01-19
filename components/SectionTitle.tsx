@@ -12,7 +12,7 @@ function SectionTitle({ title }: SectionTitleProps) {
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="absolute top-16 md:top-24 uppercase tracking-[20px] translate-x-[10px] text-gray-500 text-xl md:text-2xl"
+      className="absolute top-16 md:top-24 uppercase tracking-[20px] -mr-[20px] text-gray-500 text-xl md:text-2xl"
     >
       {title}
     </motion.h3>
