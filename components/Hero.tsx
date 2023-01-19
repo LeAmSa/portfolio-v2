@@ -27,7 +27,7 @@ function Hero({ pageInfo, socials }: HeroProps) {
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-2xl md:text-6xl lg:text-5xl font-bold bg-clip-text lg:text-left text-transparent bg-gradient-to-t from-slate-200"
+          className="text-2xl whitespace-nowrap md:text-6xl lg:text-6xl font-bold bg-clip-text lg:text-left text-transparent bg-gradient-to-t from-slate-200"
         >
           {pageInfo?.name}
         </motion.h1>
@@ -41,10 +41,20 @@ function Hero({ pageInfo, socials }: HeroProps) {
           {pageInfo?.role}
         </motion.h2>
 
-        <motion.h3
+        <motion.p
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8 }}
+          className="text-slate-300 text-center font-semibold lg:text-start text-base md:text-xl lg:text-2xl mt-6 md:mt-12 lg:mt-8 px-12 lg:px-0"
+        >
+          Conheça a jornada de um explorador do universo <br /> front-end e
+          amante de design.
+        </motion.p>
+
+        <motion.h3
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.0 }}
           className="mt-6 md:mt-12 lg:mt-6 text-xl md:text-4xl lg:text-3xl lg:text-left font-semibold"
         >
           <span className="mr-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-red-400">
@@ -52,16 +62,6 @@ function Hero({ pageInfo, socials }: HeroProps) {
           </span>
           <Cursor cursorColor="#dc2626" />
         </motion.h3>
-
-        <motion.p
-          initial={{ y: -30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1.0 }}
-          className="text-slate-200 text-center lg:text-start text-base md:text-xl lg:text-lg mt-6 md:mt-12 lg:mt-6 px-12 lg:px-0"
-        >
-          Conheça a jornada de um explorador do universo front-end e amante de
-          design.
-        </motion.p>
 
         <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 lg:static lg:left-0 lg:-translate-x-0 lg:pt-20 flex justify-center lg:justify-start items-center gap-4">
           {socials?.map((social, i) => (
