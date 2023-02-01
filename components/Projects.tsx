@@ -137,7 +137,7 @@ function Projects({ projects }: ProjectsProps) {
         ))}
       </div>
 
-      <div className="w-full absolute top-[30%] blur-sm bg-red-700/20 left-0 h-[400px] -skew-y-12" />
+      <div className="w-full absolute top-[30%] blur-sm bg-red-800/25 left-0 h-[400px] -skew-y-12" />
     </div>
   );
 }
