@@ -12,7 +12,7 @@ import ToolTip from "./ToolTip";
 function Header() {
   return (
     <header className="sticky backdrop-blur-lg top-0 py-4 md:py-6 flex items-center justify-center md:justify-between w-full px-20 z-20">
-      <Link href="#hero">
+      <Link href="#hero" aria-label="Página inicial">
         <motion.div
           initial={{
             y: -50,
@@ -47,7 +47,7 @@ function Header() {
         </motion.p>
       </Link>
 
-      <motion.div
+      <motion.ul
         initial={{
           y: -50,
           opacity: 0,
@@ -61,23 +61,47 @@ function Header() {
         }}
         className="flex items-center gap-6"
       >
-        <Link href="#about" className="relative group">
-          <UserCircleIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
-          <ToolTip title="Sobre" />
-        </Link>
-        <Link href="#skills" className="relative group">
-          <BoltIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
-          <ToolTip title="Skills" />
-        </Link>
-        <Link href="#projects" className="relative group">
-          <RectangleStackIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
-          <ToolTip title="Projetos" />
-        </Link>
-        <Link href="#contact" className="relative group">
-          <EnvelopeIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
-          <ToolTip title="Contato" />
-        </Link>
-      </motion.div>
+        <li>
+          <Link
+            href="#about"
+            className="relative group"
+            aria-label="Veja mais sobre Leandro"
+          >
+            <UserCircleIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
+            <ToolTip title="Sobre" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="#skills"
+            className="relative group"
+            aria-label="Veja as skills de Leandro"
+          >
+            <BoltIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
+            <ToolTip title="Skills" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="#projects"
+            className="relative group"
+            aria-label="Veja os projetos de Leandro"
+          >
+            <RectangleStackIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
+            <ToolTip title="Projetos" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="#contact"
+            className="relative group"
+            aria-label="Entre em contato com Leandro"
+          >
+            <EnvelopeIcon className="w-6 h-6 hover:text-slate-400 transition-colors" />
+            <ToolTip title="Contato" />
+          </Link>
+        </li>
+      </motion.ul>
     </header>
   );
 }
