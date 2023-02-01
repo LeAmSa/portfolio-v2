@@ -48,7 +48,7 @@ function Hero({ pageInfo, socials }: HeroProps) {
           className="text-slate-300 text-center font-semibold lg:text-start text-base md:text-xl lg:text-2xl mt-6 md:mt-12 lg:mt-8 px-12 lg:px-0"
         >
           Conheça a jornada de um explorador do universo <br /> front-end e
-          amante de design.
+          apaixonado por design.
         </motion.p>
 
         <motion.h3
@@ -92,6 +92,7 @@ function Hero({ pageInfo, socials }: HeroProps) {
           alt="Perfil"
           width={600}
           height={600}
+          priority
           className="opacity-10 lg:opacity-50 lg:static absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-y-0 lg:translate-x-0 w-[500px] h-[500px] lg:w-[600px] lg:h-[600px] object-cover"
         />
       </motion.div>
