@@ -106,6 +106,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
           <input
             {...register("name", { required: "Preencha seu nome" })}
             placeholder="Nome"
+            aria-label="Insira seu nome"
             className={`contactInput ${
               errors.name && `border-2 border-red-700`
             } `}
@@ -126,6 +127,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
               },
             })}
             placeholder="Email"
+            aria-label="Insira seu email"
             className={`contactInput ${
               errors.email && `border-2 border-red-700`
             } `}
@@ -140,6 +142,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
           <textarea
             {...register("message", { required: "Digite uma mensagem" })}
             placeholder="Mensagem"
+            aria-label="Digite sua mensagem"
             className={`contactInput ${
               errors.message && `border-2 border-red-700`
             } `}
@@ -152,6 +155,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
 
           <button
             type="submit"
+            aria-label="Enviar email"
             className="flex items-center justify-center bg-red-500 py-5 px-10 rounded-md text-white font-bold text-lg hover:bg-red-500/80 transition-colors"
           >
             {isSubmitting ? <Spinner /> : <span>Enviar</span>}
