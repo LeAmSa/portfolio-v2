@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { urlFor } from "../sanity";
 import { PageInfo } from "../typings";
 import SectionTitle from "./SectionTitle";
@@ -17,23 +18,29 @@ function About({ pageInfo }: AboutProps) {
     <div className="h-screen flex relative flex-col text-center lg:text-left lg:flex-row max-w-7xl px-5 lg:px-10 justify-center mx-auto items-center z-0">
       <SectionTitle title="Sobre" />
 
-      <motion.img
+      <motion.div
         initial={{
           x: -70,
           opacity: 0,
         }}
         transition={{
-          duration: 1.2,
+          delay: 1.2,
         }}
         whileInView={{
           x: 0,
           opacity: 1,
         }}
         viewport={{ once: true }}
-        src={urlFor(pageInfo?.profilePic).url()}
-        alt="Imagem de frente"
-        className="mt-20 mb-5 md:mb-0 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 xl:w-80 xl:h-80"
-      />
+        className="mt-20 mb-5 md:mb-0 flex-shrink-0"
+      >
+        <Image
+          src={urlFor(pageInfo?.profilePic).url()}
+          alt="Imagem de frente"
+          width={320}
+          height={320}
+          className="w-36 h-36 rounded-lg object-cover md:w-64 md:h-64 xl:w-80 xl:h-80"
+        />
+      </motion.div>
 
       <div className="md:mt-20 space-y-5 md:space-y-10 px-0 md:px-10">
         <motion.h4
@@ -46,7 +53,7 @@ function About({ pageInfo }: AboutProps) {
             opacity: 1,
           }}
           transition={{
-            duration: 1,
+            delay: 1,
           }}
           viewport={{ once: true }}
           className="text-xl md:text-4xl font-semibold"
@@ -66,7 +73,7 @@ function About({ pageInfo }: AboutProps) {
             opacity: 1,
           }}
           transition={{
-            duration: 1,
+            delay: 1,
           }}
           viewport={{ once: true }}
           className="text-sm md:text-lg overflow-y-scroll max-h-[200px] pr-4 scrollbar-thin scrollbar-track-gray-900/50 scrollbar-track-rounded-lg scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scrollbar-thumb-rounded-lg"
