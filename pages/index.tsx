@@ -38,7 +38,7 @@ type Props = {
 const Home = ({ pageInfo, skills, projects, socials }: Props) => {
   return (
     <div
-      className={`relative bg-[#1D2429] text-slate-100 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-[#242424]/60 scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scroll-smooth ${jost.variable} font-sans`}
+      className={`relative bg-[#16202E] text-slate-100 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-[#242424]/60 scrollbar-thumb-red-500/50 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scroll-smooth ${jost.variable} font-sans`}
     >
       <Head>
         <meta
@@ -71,11 +71,7 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
         <ContactMe pageInfo={pageInfo} />
       </section>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[70%] bg-hero rounded-lg blur-[100px] opacity-30 skew-y-[20deg] z-10"
-      />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[70%] bg-hero rounded-lg blur-[100px] opacity-30 skew-y-[20deg] z-10" />
     </div>
   );
 };
