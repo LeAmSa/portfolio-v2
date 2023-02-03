@@ -31,14 +31,14 @@ function Projects({ projects }: ProjectsProps) {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="hidden md:block absolute top-36 uppercase tracking-[3px] text-gray-500 text-xs md:text-sm"
+        className="hidden md:block absolute top-32 uppercase tracking-[3px] text-gray-500 text-xs md:text-sm"
       >
         Ordenados do mais{" "}
         <span className="underline decoration-red-500/70">recente</span> para o
         mais antigo
       </motion.h3>
 
-      <div className="mt-24 relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-track-rounded-lg scrollbar-thumb-red-600/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scrollbar-thumb-rounded-lg">
+      <div className="mt-24 relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-track-rounded-lg scrollbar-thumb-red-500/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scrollbar-thumb-rounded-lg">
         {projects?.map((project, i) => (
           <div
             key={project?._id}
@@ -51,7 +51,7 @@ function Projects({ projects }: ProjectsProps) {
               height={382}
               placeholder="blur"
               blurDataURL="URL"
-              className="max-w-[150px] md:max-w-[250px] h-auto object-cover"
+              className="max-w-[150px] md:max-w-[300px] 2xl:max-w-[600px] h-auto object-cover"
             />
             <div className="space-y-5 px-0 md:px-10 max-w-6xl">
               <div className="flex flex-col gap-2 items-center justify-center">
