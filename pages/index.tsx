@@ -20,8 +20,6 @@ import {
 
 import { PageInfo, Project, Social, Skill } from "../typings";
 
-import { motion } from "framer-motion";
-
 const jost = Jost({
   subsets: ["latin"],
   variable: "--font-jost",
@@ -41,12 +39,13 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
       className={`relative bg-[#16202E] text-slate-100 h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-[#242424]/60 scrollbar-thumb-red-500/50 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scroll-smooth ${jost.variable} font-sans`}
     >
       <Head>
+        <title>LeAmSa | Front-end Developer</title>
         <meta
           name="description"
           content="Conheça a jornada de um explorador do universo front-end e apaixonado por design."
+          key="desc"
         />
         <link rel="canonical" href="https://leamsa-portfolio.vercel.app" />
-        <title>LeAmSa | Portfolio</title>
       </Head>
 
       <Header />
