@@ -9,7 +9,7 @@ interface AboutProps {
 }
 
 function About({ pageInfo }: AboutProps) {
-  const birth = new Date(1994, 4, 12);
+  const birth = new Date(1994, 3, 12);
   const diff = Date.now() - birth.getTime();
   const ageDate = new Date(diff);
   const years = Math.abs(ageDate.getUTCFullYear() - 1970);
