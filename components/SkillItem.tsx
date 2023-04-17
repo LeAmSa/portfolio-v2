@@ -18,14 +18,14 @@ function Skill({ skill }: SkillItemProps) {
         }}
         whileInView={{
           opacity: [0, 0.5, 0.8, 1],
-          scale: [0.3, 0.6, 1.1, 1 - 5 / skill?.progress],
+          scale: [0.3, 0.6, 1.1, 1],
         }}
         transition={{
           delay: 0.7 + skill?.progress / 100,
         }}
         viewport={{ once: true }}
         title={skill?.title}
-        className="group relative flex cursor-pointer"
+        className="group relative flex"
       >
         <div className="flex justify-center items-center w-16 h-16 md:w-20 md:h-20 rounded-full border border-gray-500">
           <Image
@@ -35,14 +35,6 @@ function Skill({ skill }: SkillItemProps) {
             height="30"
             className="md:w-10 md:h-10 object-cover"
           />
-        </div>
-
-        <div className="absolute opacity-0 group-hover:opacity-80 hover:backdrop-blur-3xl h-16 w-16 md:w-20 md:h-20 rounded-full z-0">
-          <div className="flex items-center justify-center h-full">
-            <p className="text- md:text-xl font-bold text-white opacity-100">
-              {skill?.progress}%
-            </p>
-          </div>
         </div>
       </m.div>
     </LazyMotion>
