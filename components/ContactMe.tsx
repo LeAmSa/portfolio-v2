@@ -101,7 +101,7 @@ function ContactMe({ pageInfo }: ContactMeProps) {
           transition={{ delay: 1.5 }}
           viewport={{ once: true }}
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 max-w-xs md:max-w-none md:w-96 mx-auto"
+          className="flex flex-col space-y-2 w-72 md:w-96 mx-auto"
         >
           <input
             {...register("name", { required: "Preencha seu nome" })}
