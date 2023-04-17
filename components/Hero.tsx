@@ -27,7 +27,7 @@ function Hero({ pageInfo, socials }: HeroProps) {
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-2xl whitespace-nowrap md:text-6xl lg:text-6xl font-bold bg-clip-text lg:text-left text-transparent bg-gradient-to-t from-slate-200"
+          className="text-3xl whitespace-nowrap md:text-6xl lg:text-6xl font-bold bg-clip-text lg:text-left text-transparent bg-gradient-to-t from-slate-200"
         >
           {pageInfo?.name}
         </motion.h1>
@@ -47,8 +47,9 @@ function Hero({ pageInfo, socials }: HeroProps) {
           transition={{ delay: 0.8 }}
           className="text-slate-300 text-center font-semibold lg:text-start text-base md:text-xl lg:text-2xl mt-6 md:mt-12 lg:mt-8 px-12 lg:px-0"
         >
-          Conheça a jornada de um explorador do universo <br /> front-end e
-          apaixonado por design.
+          Conheça a jornada de um explorador do universo{" "}
+          <br className="hidden md:inline-block" /> front-end e apaixonado por
+          design.
         </motion.p>
 
         <motion.h3
