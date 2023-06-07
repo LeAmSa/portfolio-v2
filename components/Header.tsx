@@ -47,7 +47,7 @@ function Header() {
         </motion.p>
       </Link>
 
-      <motion.ul
+      <motion.menu
         initial={{
           y: -50,
           opacity: 0,
@@ -101,7 +101,7 @@ function Header() {
             <ToolTip title="Contato" />
           </Link>
         </li>
-      </motion.ul>
+      </motion.menu>
     </header>
   );
 }

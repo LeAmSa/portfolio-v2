@@ -15,7 +15,7 @@ function About({ pageInfo }: AboutProps) {
   const years = Math.abs(ageDate.getUTCFullYear() - 1970);
 
   return (
-    <div className="h-screen flex relative flex-col text-center lg:text-left lg:flex-row max-w-7xl px-5 lg:px-10 justify-center mx-auto items-center z-0">
+    <div className="h-screen flex gap-0 relative flex-col text-left lg:text-left lg:flex-row max-w-7xl px-5 lg:px-10 justify-center mx-auto items-center z-0 md:gap-8">
       <SectionTitle title="Sobre" />
 
       <motion.div
@@ -31,18 +31,18 @@ function About({ pageInfo }: AboutProps) {
           opacity: 1,
         }}
         viewport={{ once: true }}
-        className="mt-20 mb-5 md:mb-0 flex-shrink-0"
+        className="mt-20 mb-5 md:mb-0 flex-shrink-0 self-start md:self-center"
       >
         <Image
           src={urlFor(pageInfo?.profilePic).url()}
           alt="Imagem de frente"
           width={320}
           height={320}
-          className="w-36 h-36 rounded-lg object-cover md:w-64 md:h-64 xl:w-80 xl:h-80"
+          className="w-24 h-24 rounded-full object-cover md:w-64 md:h-64 xl:w-80 xl:h-80"
         />
       </motion.div>
 
-      <div className="md:mt-20 space-y-5 md:space-y-10 px-0 md:px-10">
+      <div className="md:mt-20 space-y-5 md:space-y-10">
         <motion.h4
           initial={{
             y: -50,
@@ -56,7 +56,7 @@ function About({ pageInfo }: AboutProps) {
             delay: 1,
           }}
           viewport={{ once: true }}
-          className="text-xl md:text-4xl font-semibold"
+          className="text-2xl md:text-4xl font-semibold"
         >
           Um pequeno{" "}
           <strong className="underline decoration-red-600 bg-clip-text text-transparent bg-gradient-to-r from-slate-200 to-red-300">
@@ -76,7 +76,7 @@ function About({ pageInfo }: AboutProps) {
             delay: 1,
           }}
           viewport={{ once: true }}
-          className="text-sm md:text-lg overflow-y-scroll max-h-[200px] pr-4 scrollbar-thin scrollbar-track-gray-900/50 scrollbar-track-rounded-lg scrollbar-thumb-red-500/80 hover:scrollbar-thumb-red-800/80 active:scrollbar-thumb-red-700/80 scrollbar-thumb-rounded-lg"
+          className="font-light text-base md:text-lg max-h-[300px] pr-4"
         >
           Olá, seja muito bem vindo (a) ao meu site! Me chamo Leandro, tenho{" "}
           {years} anos e sou bacharel em{" "}
@@ -86,33 +86,8 @@ function About({ pageInfo }: AboutProps) {
           pela Universidade Tecnológica Federal do Paraná [2015-2020].
           Apaixonado por tecnologia, design e pelo poder que o visual pode gerar
           por meio de produtos e serviços, venho me dedicando aos estudos da
-          area Front-end de desenvolvimento e criei este site pessoal como forma
-          de apresentar tudo aquilo em que venho trabalhando. <br /> <br />{" "}
-          Minha paixão por design surgiu antes mesmo da graduação. Em 2014,
-          trabalhei por um período como{" "}
-          <strong className="underline decoration-red-600 font-semibold">
-            designer gráfico
-          </strong>{" "}
-          de anúncios de diversos produtos e era extremamente gratificante
-          quando conseguia desenvolver algo que agradasse aos olhos das outras
-          pessoas. Hoje, essa paixão é acentuada quando vejo sites ou
-          aplicativos que possuem um aspecto visual inovador e capaz de
-          conquistar as pessoas pelo visual. Com isso, ser capaz de
-          desenvolvê-los é o que me inspira. <br /> <br /> Venho me dedicando ao
-          estudo do ambiente de desenvolvimento web com{" "}
-          <strong className="underline decoration-red-600 font-semibold">
-            HTML, CSS, JavaScript e React
-          </strong>{" "}
-          como framework para agregar essas tecnologias. Me considero um
-          desenvolvedor ágil, que busca sempre entregar além do esperado e
-          principalmente "self-learning", pois tenho uma enorme capacidade de
-          aprender coisas novas por conta própria, afinal, a maior virtude de um
-          cientista é sua capacidade de pesquisa. Fique a vontade para conhecer
-          um pouco mais das minhas capacidades explorando as seções abaixo e
-          entre em contato se quiser me conhecer ainda melhor.{" "}
-          <strong className="font-semibold underline decoration-red-600">
-            Obrigado!
-          </strong>
+          area de desenvolvimento Front-end e criei este site pessoal como forma
+          de apresentar tudo aquilo em que venho trabalhando.
         </motion.p>
       </div>
 

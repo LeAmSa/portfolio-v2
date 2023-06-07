@@ -21,13 +21,13 @@ function Hero({ pageInfo, socials }: HeroProps) {
   });
 
   return (
-    <div className="relative h-screen flex space-y-8 items-center justify-center text-center overflow-hidden max-w-7xl mx-auto z-[11] lg:translate-x-16">
-      <div className="z-10">
+    <div className="relative h-screen grid place-items-center text-center overflow-hidden max-w-7xl mx-auto z-[11]">
+      <div className="z-10 translate-y-28">
         <motion.h1
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-3xl whitespace-nowrap md:text-6xl lg:text-6xl font-bold bg-clip-text lg:text-left text-transparent bg-gradient-to-t from-slate-200"
+          className="text-3xl whitespace-nowrap md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-t from-slate-200"
         >
           {pageInfo?.name}
         </motion.h1>
@@ -36,7 +36,7 @@ function Hero({ pageInfo, socials }: HeroProps) {
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="text-xs md:text-lg text-slate-500 lg:text-left uppercase tracking-[15px]"
+          className="text-xs md:text-lg text-slate-500 uppercase tracking-[15px]"
         >
           {pageInfo?.role}
         </motion.h2>
@@ -45,7 +45,7 @@ function Hero({ pageInfo, socials }: HeroProps) {
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="text-slate-300 text-center font-semibold lg:text-start text-base md:text-xl lg:text-2xl mt-6 md:mt-12 lg:mt-8 px-12 lg:px-0"
+          className="text-slate-300 text-center font-semibold text-base md:text-xl lg:text-2xl mt-6 md:mt-12 lg:mt-8 px-12 lg:px-0"
         >
           Conheça a jornada de um explorador do universo{" "}
           <br className="hidden md:inline-block" /> front-end e apaixonado por
@@ -56,31 +56,31 @@ function Hero({ pageInfo, socials }: HeroProps) {
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1.0 }}
-          className="mt-6 md:mt-12 lg:mt-6 text-xl md:text-4xl lg:text-3xl lg:text-left font-semibold"
+          className="mt-6 md:mt-12 text-xl md:text-4xl lg:text-3xl font-semibold"
         >
           <span className="mr-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-red-400">
             &lt;Dev {text}
           </span>
           <Cursor cursorColor="#dc2626" />
         </motion.h3>
+      </div>
 
-        <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 lg:static lg:left-0 lg:-translate-x-0 lg:pt-20 flex justify-center lg:justify-start items-center gap-4">
-          {socials?.map((social, i) => (
-            <motion.div
-              key={social._id}
-              initial={{ y: -30 - i * 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1.2 + i / 10 }}
-            >
-              <SocialIcon
-                url={social.url}
-                fgColor="gray"
-                bgColor="transparent"
-                className="hover:scale-90 transition-transform object-cover"
-              />
-            </motion.div>
-          ))}
-        </div>
+      <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 lg:static lg:left-0 lg:-translate-x-0 lg:pt-20 flex justify-center items-center gap-4 z-10">
+        {socials?.map((social, i) => (
+          <motion.div
+            key={social._id}
+            initial={{ y: -30 - i * 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1.2 + i / 10 }}
+          >
+            <SocialIcon
+              url={social.url}
+              fgColor="gray"
+              bgColor="transparent"
+              className="hover:scale-90 transition-transform object-cover"
+            />
+          </motion.div>
+        ))}
       </div>
 
       <motion.div
@@ -94,7 +94,7 @@ function Hero({ pageInfo, socials }: HeroProps) {
           width={600}
           height={600}
           priority
-          className="opacity-10 lg:opacity-50 lg:static absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-y-0 lg:translate-x-0 w-[500px] h-[500px] lg:w-[600px] lg:h-[600px] object-cover"
+          className="opacity-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] object-cover"
         />
       </motion.div>
     </div>
